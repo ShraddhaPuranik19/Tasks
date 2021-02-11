@@ -4,8 +4,8 @@ interface help
     color? : String;
 }
 class Circle{
-    radius? : number = 1.0;
-    color? : String = "red";
+    radius : number = 1.0;
+    color : String = "red";
 
     constructor(obj:help)
     {
