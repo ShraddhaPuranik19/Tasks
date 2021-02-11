@@ -1,0 +1,65 @@
+interface help
+{
+    radius? : number;
+    color? : String;
+}
+class Circle{
+    radius? : number = 1.0;
+    color? : String = "red";
+
+    constructor(obj:help)
+    {
+        this.radius= obj.radius;
+        this.color = obj.color;
+    }
+
+    getRadius():number{
+        return this.radius;
+    }
+
+    setRadius(radius:number):void{
+        this.radius = radius;
+        console.log(this.radius);
+    }
+
+    setColor(color:String):void{
+        this.color = color;
+        console.log(this.color);
+    } 
+
+    getColor():String{
+        return this.color;
+    }
+
+    getArea():number{
+        return (Math.PI * this.radius *this.radius);
+    }
+
+    getCircumference():number{
+        return (Math.PI*2*this.radius );
+    }
+}
+
+let obj = {
+    radius : 2,  
+}
+
+let obj1 = {
+    radius : 3,
+    color:"red",
+}
+let obj2 = {}
+
+let c1 = new Circle(obj); //1
+let c2 = new Circle(obj1); //2
+let c3 = new Circle(obj2); //empty
+console.log(c1,c2,c3);
+
+console.log(c1.getRadius());
+console.log(c2.getColor());
+console.log(c2.getArea());
+console.log(c2.getCircumference());
+
+c2.setRadius(5);
+c2.setColor('yellow');
+console.log(c2);
